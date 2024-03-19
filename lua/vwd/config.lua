@@ -13,10 +13,10 @@ local cmd = {
 		require("vwd").set_vwd(args[1])
 		notify.info("VWD updated to '%s'", require("vwd").get_vwd())
 	end,
-	["get"] = function(...)
+	["get"] = function()
 		notify.info("VWD is '%s'", require("vwd").get_vwd())
 	end,
-	["reset"] = function(...)
+	["reset"] = function()
 		require("vwd").reset_vwd()
 		notify.info("VWD resetted to '%s'", require("vwd").get_vwd())
 	end,
