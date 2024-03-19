@@ -79,7 +79,7 @@ require('vwd').get_vwd()
 
 Set the VWD with:
 ```lua
-require('vwd').set_vwd(vwd)
+require('vwd').set_vwd(vwd, absolute)
 ```
 
 Reset the VWD with:

@@ -6,7 +6,7 @@ local manatee = require("vwd")
 M.set_vwd = function(prompt_bufnr)
 	local action_state = require("telescope.actions.state")
 	local current_picker = action_state.get_current_picker(prompt_bufnr)
-	manatee.set_vwd(current_picker.finder.path)
+	manatee.set_vwd(current_picker.finder.path, true)
 end
 
 return M
