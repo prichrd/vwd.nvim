@@ -1,0 +1,86 @@
+*vwd.nvim* A Virtual Working Directory for Neovim.
+
+==============================================================================
+CONTENTS
+*vwd-contents*
+
+  1. Intro (|vwd-intro|)
+  2. Configure (|vwd-configuration|)
+    a. Telescope (|vwd-configure-telescope|)
+  3. Command (|vwd-command|)
+  4. API (|vwd-api|)
+
+==============================================================================
+INTRO
+*vwd-intro*
+
+This plugin aims to provide a Virtual Working Directory (VWD) to use with
+other plugins. When working with large repositories, targeting searches to
+specific directories becomes essential. This plugin exposes an API and
+commands to set, get and reset the working directory. It also provides a
+Telescope extension to search from the VWD.
+
+==============================================================================
+CONFIGURATION
+*vwd-configuration*
+
+The plugin currently doesn't have any configuration options. The setup
+function still has to be called to configure the commands:
+>lua
+  require('vwd').setup({})
+<
+*vwd-configure-telescope*
+
+This plugin extends Telescope's `find_files` and `live_grep` functionality by
+setting the CWD to the VWD. Here is a sample Telescope configuration:
+>lua
+  local telescope = require('telescope')
+
+  -- Register the vwd extension.
+  telescope.load_extension('vwd')
+
+  -- Configures find_files and live_grep to use VWD. You can still provide
+  -- regular Telescope arguments to the finders.
+  vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>lua require"telescope".extensions.vwd.find_files{}<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>lua require"telescope".extensions.vwd.live_grep{}<CR>', opts)
+<
+==============================================================================
+COMMANDS
+*vwd-command*
+
+*vwd-command-get*
+:VWD get
+
+  Prints the current VWD.
+
+*vwd-command-set*
+:VWD set {vwd}
+
+  Sets the VWD to {vwd}.
+
+*vwd-command-reset*
+:VWD reset
+
+  Resets the VWD to |cwd|.
+
+==============================================================================
+COMMANDS
+*vwd-api*
+
+*vwd-api-get*
+`require('vwd').get_vwd()`
+
+  Returns the current VWD.
+
+*vwd-api-set*
+`require('vwd').set_vwd(vwd)`
+
+  Sets the VWD to {vwd}.
+
+*vwd-api-reset*
+`require('vwd').reset_vwd()`
+
+  Resets the VWD to |cwd|.
+
+
+vim: ft=help tw=78 et ts=2 sw=2 sts=2 norl
