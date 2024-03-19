@@ -10,7 +10,7 @@ local defaults = {}
 local cmd = {
 	["set"] = function(...)
 		local args = ...
-		require("vwd").set_vwd(args[1])
+		require("vwd").set_vwd(args[1], false)
 		notify.info("VWD updated to '%s'", require("vwd").get_vwd())
 	end,
 	["get"] = function()

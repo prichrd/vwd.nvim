@@ -73,9 +73,9 @@ COMMANDS
   Returns the current VWD.
 
 *vwd-api-set*
-`require('vwd').set_vwd(vwd)`
+`require('vwd').set_vwd(vwd, absolute)`
 
-  Sets the VWD to {vwd}.
+  Sets the VWD to {vwd}. If the path is absolute, set the boolean to true.
 
 *vwd-api-reset*
 `require('vwd').reset_vwd()`
