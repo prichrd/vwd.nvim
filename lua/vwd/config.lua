@@ -32,7 +32,7 @@ function M.setup(options)
 	vim.api.nvim_create_user_command("VWD", function(opts)
 		local err = command.execute(cmd, opts.fargs)
 		if err then
-			notify.error("%s", err)
+			notify.error("%s, please refer to the documentation ':h vwd.nvim'", err)
 		end
 	end, {
 		nargs = "*",
