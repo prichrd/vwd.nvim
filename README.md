@@ -36,8 +36,9 @@ function still has to be called to configure the commands:
 
 ### Telescope
 
-vwd.nvim extends Telescope's `find_files` and `live_grep` functionality by
-setting the CWD to the VWD. Here is a sample Telescope configuration:
+vwd.nvim extends Telescope's `find_files`, `live_grep` and `grep_string`
+functionalities by setting the CWD to the VWD. Here is a sample Telescope
+configuration:
 
 ```lua
   local telescope = require('telescope')
@@ -45,10 +46,11 @@ setting the CWD to the VWD. Here is a sample Telescope configuration:
   -- Register the vwd extension.
   telescope.load_extension('vwd')
 
-  -- Configures find_files and live_grep to use VWD. You can still provide
+  -- Configures find_files, live_grep and grep_string to use VWD. You can still provide
   -- regular Telescope arguments to the finders.
-  vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>lua require"telescope".extensions.vwd.find_files{}<CR>', opts)
-  vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>lua require"telescope".extensions.vwd.live_grep{}<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>lua require"telescope".extensions.vwd.find_files({})<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>lua require"telescope".extensions.vwd.live_grep({})<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<Leader>fs', '<cmd>lua require"telescope".extensions.vwd.grep_string({})<CR>', opts)
 ```
 
 ## Usage

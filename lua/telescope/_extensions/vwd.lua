@@ -13,6 +13,12 @@ local live_grep = function(opts)
 	builtin.live_grep(opts)
 end
 
+local grep_string = function(opts)
+	opts = opts or {}
+	opts.cwd = vwd.get_vwd()
+	builtin.grep_string(opts)
+end
+
 local file_browser = function(opts)
 	opts = opts or {}
 	opts.cwd = vwd.get_vwd()
@@ -23,6 +29,7 @@ return require("telescope").register_extension({
 	exports = {
 		find_files = find_files,
 		live_grep = live_grep,
+		grep_string = grep_string,
 		file_browser = file_browser,
 		actions = require("telescope._extensions.vwd.actions"),
 	},
