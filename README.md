@@ -13,17 +13,21 @@ Telescope extension to search from the VWD.
 
 Install the plugin with your preferred package manager:
 
-[vim-plug](https://github.com/junegunn/vim-plug)
+<details>
+<summary><a href="https://github.com/folke/lazy.nvim">lazy.nvim</a></summary>
+<code>{ 'prichrd/vwd.nvim', opts = {} }</code>
+</details>
 
-```vim
-Plug 'prichrd/netrw.nvim'
-```
+<details>
+<summary><a href="https://github.com/junegunn/vim-plug">vim-plug</a></summary>
+<code>Plug 'prichrd/vwd.nvim'</code>
+</details>
 
-[packer](https://github.com/wbthomason/packer.nvim)
+<details>
+<summary><a href="https://github.com/wbthomason/packer.nvim">packer</a></summary>
+<code>use 'prichrd/vwd.nvim'</code>
+</details>
 
-```lua
-use 'prichrd/netrw.nvim'
-```
 
 ## Configuration
 
