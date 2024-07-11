@@ -5,7 +5,7 @@ CONTENTS
 *vwd-contents*
 
   1. Intro (|vwd-intro|)
-  2. Configure (|vwd-configuration|)
+  2. Configuration (|vwd-configuration|)
     a. Telescope (|vwd-configure-telescope|)
   3. Command (|vwd-command|)
   4. API (|vwd-api|)
